@@ -7,9 +7,9 @@ function MonsterEntries() {
     <tr>
       <MonsterBtnMoveEntry />
       <td>Goblin</td>
-      <td>CR: 1/4</td>
-      <td>AC: 15</td>
-      <td>HP: 7</td>
+      <td>1/4</td>
+      <td>15</td>
+      <td>7</td>
       <MonsterButtons />
     </tr>
   );

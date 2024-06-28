@@ -1,21 +1,16 @@
 import React from "react";
+import PlayerBtnMoveEntry from "./PlayerBtnMoveEntry";
+import PlayerButtons from "./PlayerButtons";
 
 function PlayerEntries() {
   return (
     <tr>
-      <td>
-        <button>Move Up</button>
-      </td>
-      <td>
-        <button>Move Down</button>
-      </td>
+      <PlayerBtnMoveEntry />
       <td>Player 1</td>
-      <td>Level: 1</td>
-      <td>AC: 15</td>
-      <td>HP: 10</td>
-      <td>
-        <button>Edit/Save or Delete</button>
-      </td>
+      <td>1</td>
+      <td>15</td>
+      <td>10</td>
+      <PlayerButtons />
     </tr>
   );
 }

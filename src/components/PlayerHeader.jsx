@@ -2,15 +2,15 @@ import React from "react";
 
 function PlayerHeader() {
   return (
-    <th>
-      <td></td>
-      <td></td>
-      <td>Name</td>
-      <td>Level</td>
-      <td>Armor</td>
-      <td>Hit Points</td>
-      <td></td>
-    </th>
+    <>
+      <th></th>
+      <th></th>
+      <th>Name</th>
+      <th>Lvl</th>
+      <th>AC</th>
+      <th>HP</th>
+      <th></th>
+    </>
   );
 }
 

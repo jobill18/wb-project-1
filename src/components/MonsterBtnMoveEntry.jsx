@@ -4,10 +4,10 @@ function MonsterBtnMoveEntry() {
   return (
     <>
       <td>
-        <button>up</button>
+        <button>+</button>
       </td>
       <td>
-        <button>down</button>
+        <button>-</button>
       </td>
     </>
   );

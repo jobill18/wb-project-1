@@ -2,15 +2,15 @@ import React from "react";
 
 function MonsterHeader() {
   return (
-    <th>
-      <td></td>
-      <td></td>
-      <td>Name</td>
-      <td>CR</td>
-      <td>Armor</td>
-      <td>Hit Points</td>
-      <td></td>
-    </th>
+    <>
+      <th></th>
+      <th></th>
+      <th>Name</th>
+      <th>CR</th>
+      <th>AC</th>
+      <th>HP</th>
+      <th></th>
+    </>
   );
 }
 
