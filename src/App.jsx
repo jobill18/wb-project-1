@@ -9,16 +9,23 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <table>
-      <tbody>
-        <td>
-          <MonsterList />
-        </td>
-        <td>
-          <PlayerList />
-        </td>
-      </tbody>
-    </table>
+    <>
+      <h1>DnD Encounter Planner</h1>
+      <table>
+        <thead>
+          <th>Monsters</th>
+          <th>Players</th>
+        </thead>
+        <tbody>
+          <td>
+            <MonsterList />
+          </td>
+          <td>
+            <PlayerList />
+          </td>
+        </tbody>
+      </table>
+    </>
   );
 }
 
