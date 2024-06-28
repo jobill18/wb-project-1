@@ -3,12 +3,12 @@ import React from "react";
 function MonsterButtons({ isEditing }) {
   return isEditing ? (
     <td>
-      <button>Edit</button>
+      <button>Done</button>
       <button>Remove</button>
     </td>
   ) : (
     <td>
-      <button>Done</button>
+      <button>Edit</button>
     </td>
   );
 }

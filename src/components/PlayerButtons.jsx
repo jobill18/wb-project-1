@@ -1,16 +1,15 @@
 import React from "react";
 
-function PlayerButtons() {
-  return (
-    (
-      <td>
-        <button>Edit</button>
-      </td>
-    ) || (
-      <td>
-        <button>Done</button>
-      </td>
-    )
+function PlayerButtons({ isEditing }) {
+  return isEditing ? (
+    <td>
+      <button>Done</button>
+      <button>Remove</button>
+    </td>
+  ) : (
+    <td>
+      <button>Edit</button>
+    </td>
   );
 }
 

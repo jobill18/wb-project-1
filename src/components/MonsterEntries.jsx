@@ -6,8 +6,8 @@ import MonACElement from "./MonACElement";
 import MonCRElement from "./MonCRElement";
 import MonHPElement from "./MonHPElement";
 
-function MonsterEntries({ initialTableData, initialIsEditing }) {
-  const { ac, name, cr, hp } = initialTableData;
+function MonsterEntries({ initialMonsterData, initialIsEditing }) {
+  const { ac, name, cr, hp } = initialMonsterData;
 
   return (
     <tr>
