@@ -1,14 +1,14 @@
 import React from "react";
 
-function MonsterButtons({ isEditing }) {
+function MonsterButtons({ isEditing, onEditClick, onSaveClick }) {
   return isEditing ? (
     <td>
-      <button>Done</button>
+      <button onClick={onSaveClick}>Done</button>
       <button>Remove</button>
     </td>
   ) : (
     <td>
-      <button>Edit</button>
+      <button onClick={onEditClick}>Edit</button>
     </td>
   );
 }
