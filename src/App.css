@@ -9,6 +9,10 @@ h1 {
   color: rgb(179, 0, 0);
 }
 
+p {
+  text-align: right;
+}
+
 table {
   border-collapse: collapse;
   width: 380px;
