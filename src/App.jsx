@@ -11,18 +11,24 @@ function App() {
   return (
     <>
       <h1>DnD Encounter Planner</h1>
-      <table>
+      <table id="main-table">
         <thead>
           <th>Monsters</th>
           <th>Players</th>
         </thead>
         <tbody>
-          <td>
-            <MonsterList />
-          </td>
-          <td>
-            <PlayerList />
-          </td>
+          <tr>
+            <td>Estimated Encounter CR:</td>
+            <td>Suggested CR:</td>
+          </tr>
+          <tr>
+            <td>
+              <MonsterList />
+            </td>
+            <td>
+              <PlayerList />
+            </td>
+          </tr>
         </tbody>
       </table>
     </>

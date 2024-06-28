@@ -10,9 +10,13 @@ h1 {
 }
 
 table {
-  border: black, 1px, solid;
   border-collapse: collapse;
   width: 380px;
+}
+
+#main-table {
+  border: black, 1px, solid;
+  border-collapse: collapse;
 }
 
 th {
