@@ -10,7 +10,7 @@ function MonCRElement({ value, isEditing, onValueChange }) {
       />
     </td>
   ) : (
-    <td>{value}</td>
+    <td>CR: {value}</td>
   );
 }
 

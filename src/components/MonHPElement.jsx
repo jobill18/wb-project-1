@@ -10,7 +10,7 @@ function MonHPElement({ value, isEditing, onValueChange }) {
       />
     </td>
   ) : (
-    <td>{value}</td>
+    <td>HP: {value}</td>
   );
 }
 

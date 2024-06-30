@@ -10,7 +10,7 @@ function MonACElement({ value, isEditing, onValueChange }) {
       />
     </td>
   ) : (
-    <td>{value}</td>
+    <td>AC: {value}</td>
   );
 }
 

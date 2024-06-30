@@ -13,9 +13,9 @@ app.use(express.json());
 ViteExpress.config({ printViteDevServerHost: true });
 
 const TEST_MONSTERS = [
-  { id: 0, name: "Goblin", cr: 0.25, ac: 15, hp: 7 },
-  { id: 1, name: "Goblin", cr: 0.25, ac: 15, hp: 7 },
-  { id: 2, name: "Goblin", cr: 0.25, ac: 15, hp: 7 },
+  { id: 0, name: "Goblin", cr: "1/4", ac: 15, hp: 7 },
+  { id: 1, name: "Goblin", cr: "1/4", ac: 15, hp: 7 },
+  { id: 2, name: "Goblin", cr: "1/4", ac: 15, hp: 7 },
 ];
 
 app.get("/api/monsters", (req, res) => {

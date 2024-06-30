@@ -4,15 +4,12 @@ import React from "react";
 import MonsterEntries from "./MonsterEntries";
 import MonsterHeader from "./MonsterHeader";
 import MonsterAddEntry from "./MonsterAddEntry";
+import MonsterSearch from "./MonsterSearch";
 
 function MonsterList() {
   const [initialMonsterData, setInitialMonsterData] = useState([
-    { id: 0, name: "Goblin 1", cr: 1 / 4, ac: 15, hp: 7 },
-    { id: 1, name: "Goblin 2", cr: 1 / 4, ac: 15, hp: 7 },
-    { id: 2, name: "Goblin 3", cr: 1 / 4, ac: 15, hp: 7 },
+    { id: 0, name: "Goblin", cr: "1/4", ac: 15, hp: 7 },
   ]);
-
-  const newId = useId();
 
   const addMonsterEntry = async () => {
     const { data } = await axios.post("/api/monsters", {
@@ -56,38 +53,21 @@ function MonsterList() {
 
   return (
     <>
-      <p id="search-bar">
-        <label htmlFor="search-input">Find a Monster: </label>
-        <input type="text" name="search-input" id="search-input" />
-        <button type="submit">search</button>
-      </p>
+      <MonsterSearch />
       <table id="main-table">
         <thead>
           <tr>
-            {/* <th>Players</th> */}
-            <th>Monsters</th>
+            <th>Creature</th>
+            <th>Challenge</th>
+            <th>Armor Rating</th>
+            <th>Hit Points</th>
+            <th></th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            {/* <td>Suggested CR:</td> */}
-            <td>Estimated Encounter CR: {}</td>
-          </tr>
-          <tr>
-            {/* <td><PlayerList /></td> */}
-            <td>
-              <table>
-                <thead>
-                  <MonsterHeader />
-                </thead>
-                <tbody>{monsterEntries}</tbody>
-                <tfoot>
-                  <MonsterAddEntry onClick={addMonsterEntry} />
-                </tfoot>
-              </table>
-            </td>
-          </tr>
-        </tbody>
+        <tbody>{monsterEntries}</tbody>
+        <tfoot>
+          <MonsterAddEntry onClick={addMonsterEntry} />
+        </tfoot>
       </table>
     </>
   );
