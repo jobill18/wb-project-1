@@ -19,7 +19,6 @@ function MonsterEntries({ initialMonsterData, initialIsEditing, onDeleteRow }) {
 
   return (
     <tr>
-      <MonsterBtnMoveEntry />
       <MonNameElement
         value={name}
         isEditing={isEditing}
