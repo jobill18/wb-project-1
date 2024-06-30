@@ -1,12 +1,12 @@
 import React from "react";
 
-function MonsterAddEntry() {
+function MonsterAddEntry({ onClick }) {
   return (
     <tr>
       <td></td>
       <td></td>
       <td colSpan={4}>
-        <button>Add</button>
+        <button onClick={onClick}>Add</button>
       </td>
       <td></td>
     </tr>

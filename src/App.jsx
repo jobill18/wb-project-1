@@ -15,17 +15,17 @@ function App({ initialMonsterList }) {
       <table id="main-table">
         <thead>
           <tr>
-            <th>Players</th>
+            {/* <th>Players</th> */}
             <th>Monsters</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Suggested CR:</td>
+            {/* <td>Suggested CR:</td> */}
             <td>Estimated Encounter CR:</td>
           </tr>
           <tr>
-            <td>{/* <PlayerList /> */}</td>
+            {/* <td><PlayerList /></td> */}
             <td>
               <MonsterList />
             </td>

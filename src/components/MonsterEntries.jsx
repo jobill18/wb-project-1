@@ -7,7 +7,7 @@ import MonACElement from "./MonACElement";
 import MonCRElement from "./MonCRElement";
 import MonHPElement from "./MonHPElement";
 
-function MonsterEntries({ initialMonsterData, initialIsEditing }) {
+function MonsterEntries({ initialMonsterData, initialIsEditing, onDeleteRow }) {
   //   const { ac, name, cr, hp } = initialMonsterData;
   const [isEditing, setIsEditing] = useState(initialIsEditing);
   const [ac, setAC] = useState(initialMonsterData.ac);
@@ -32,6 +32,7 @@ function MonsterEntries({ initialMonsterData, initialIsEditing }) {
         isEditing={isEditing}
         onEditClick={setEditMode}
         onSaveClick={setNormalMode}
+        onRemoveClick={onDeleteRow}
       />
     </tr>
   );

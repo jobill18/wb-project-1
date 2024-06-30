@@ -15,12 +15,13 @@ p {
 
 table {
   border-collapse: collapse;
-  width: 380px;
-  place-content: top;
+  max-width: 640px;
+  min-width: 640px;
+  place-content: center;
 }
 
 #main-table {
-  border: black, 1px, solid;
+  border: rgb(179, 0, 0), 1px, solid;
   border-collapse: collapse;
 }
 
