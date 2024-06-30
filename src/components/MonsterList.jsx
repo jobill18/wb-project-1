@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState, useId } from "react";
 import React from "react";
 import MonsterEntries from "./MonsterEntries";
@@ -13,23 +14,25 @@ function MonsterList() {
 
   const newId = useId();
 
-  const addMonsterEntry = () => {
-    const newMonsterData = {
-      id: newId,
-      name: "Monster",
-      cr: "",
-      ac: "",
-      hp: "",
-      isEditing: true,
-    };
+  const addMonsterEntry = async () => {
+    const { data } = await axios.post("/api/monsters", {
+      name: "Monster Name",
+    });
+
+    const newMonsterData = { ...data, isEditing: true };
     setInitialMonsterData([...initialMonsterData, newMonsterData]);
   };
 
-  const deleteMonsterEntry = (id) => {
-    const newMonsterData = [...initialMonsterData];
-    const index = newMonsterData.findIndex((entry) => entry.id === id);
-    newMonsterData.splice(index, 1);
-    setInitialMonsterData(newMonsterData);
+  const deleteMonsterEntry = async (id) => {
+    const { data } = await axios.delete(`/api/monsters/${id}/delete`);
+
+    if (!data.error) {
+      const newMonsterData = [...initialMonsterData];
+
+      const index = newMonsterData.findIndex((entry) => entry.id === data.id);
+      newMonsterData.splice(index, 1);
+      setInitialMonsterData(newMonsterData);
+    }
   };
 
   const monsterCRData = initialMonsterData.map((monsterData) => {
@@ -44,7 +47,7 @@ function MonsterList() {
     return (
       <MonsterEntries
         key={id}
-        initialMonsterData={{ name, ac, hp, cr }}
+        initialMonsterData={{ id, name, ac, hp, cr }}
         initialIsEditing={false}
         onDeleteRow={() => deleteMonsterEntry(id)}
       />

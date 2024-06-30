@@ -8,7 +8,7 @@ function App({ initialMonsterList }) {
     <>
       <h1>DnD Encounter Planner</h1>
 
-      <MonsterList />
+      <MonsterList initialMonsterList={initialMonsterList} />
     </>
   );
 }

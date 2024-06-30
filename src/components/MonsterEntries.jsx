@@ -1,7 +1,7 @@
+import axios from "axios";
 import { useState } from "react";
 import React from "react";
 import MonsterButtons from "./MonsterButtons";
-import MonsterBtnMoveEntry from "./MonsterBtnMoveEntry";
 import MonNameElement from "./MonNameElement";
 import MonACElement from "./MonACElement";
 import MonCRElement from "./MonCRElement";
@@ -15,7 +15,23 @@ function MonsterEntries({ initialMonsterData, initialIsEditing, onDeleteRow }) {
   const [cr, setCR] = useState(initialMonsterData.cr);
   const [hp, setHP] = useState(initialMonsterData.hp);
   const setEditMode = () => setIsEditing(true);
-  const setNormalMode = () => setIsEditing(false);
+  const setNormalMode = async () => {
+    const { data } = await axios.put(`/api/monsters/${initialMonsterData.id}`, {
+      name,
+      cr,
+      ac,
+      hp,
+    });
+
+    if (!data.error) {
+      setName(data.name);
+      setCR(data.cr);
+      setAC(data.ac);
+      setHP(data.hp);
+    }
+
+    setIsEditing(false);
+  };
 
   return (
     <tr>
