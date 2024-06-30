@@ -34,22 +34,31 @@ function MonsterEntries({ initialMonsterData, initialIsEditing, onDeleteRow }) {
   };
 
   return (
-    <tr>
-      <MonNameElement
-        value={name}
-        isEditing={isEditing}
-        onValueChange={setName}
-      />
-      <MonCRElement value={cr} isEditing={isEditing} onValueChange={setCR} />
-      <MonACElement value={ac} isEditing={isEditing} onValueChange={setAC} />
-      <MonHPElement value={hp} isEditing={isEditing} onValueChange={setHP} />
-      <MonsterButtons
-        isEditing={isEditing}
-        onEditClick={setEditMode}
-        onSaveClick={setNormalMode}
-        onRemoveClick={onDeleteRow}
-      />
-    </tr>
+    <table>
+      <thead>
+        <tr>
+          <th colSpan={2}>
+            <MonNameElement
+              value={name}
+              isEditing={isEditing}
+              onValueChange={setName}
+            />
+          </th>
+
+          <MonsterButtons
+            isEditing={isEditing}
+            onEditClick={setEditMode}
+            onSaveClick={setNormalMode}
+            onRemoveClick={onDeleteRow}
+          />
+        </tr>
+      </thead>
+      <tr>
+        <MonCRElement value={cr} isEditing={isEditing} onValueChange={setCR} />
+        <MonACElement value={ac} isEditing={isEditing} onValueChange={setAC} />
+        <MonHPElement value={hp} isEditing={isEditing} onValueChange={setHP} />
+      </tr>
+    </table>
   );
 }
 

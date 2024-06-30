@@ -1,19 +1,17 @@
 import axios from "axios";
-import { useState, useId } from "react";
+import { useState } from "react";
 import React from "react";
 import MonsterEntries from "./MonsterEntries";
-import MonsterHeader from "./MonsterHeader";
 import MonsterAddEntry from "./MonsterAddEntry";
 import MonsterSearch from "./MonsterSearch";
 
-function MonsterList() {
-  const [initialMonsterData, setInitialMonsterData] = useState([
-    { id: 0, name: "Goblin", cr: "1/4", ac: 15, hp: 7 },
-  ]);
+function MonsterList({ initialMonsterList }) {
+  const [initialMonsterData, setInitialMonsterData] =
+    useState(initialMonsterList);
 
   const addMonsterEntry = async () => {
     const { data } = await axios.post("/api/monsters", {
-      name: "Monster Name",
+      name: "",
     });
 
     const newMonsterData = { ...data, isEditing: true };
@@ -32,20 +30,14 @@ function MonsterList() {
     }
   };
 
-  const monsterCRData = initialMonsterData.map((monsterData) => {
-    const { cr } = monsterData;
-
-    return;
-  });
-
   const monsterEntries = initialMonsterData.map((monsterData) => {
-    const { id, name, ac, hp, cr } = monsterData;
+    const { id, name, ac, hp, cr, isEditing } = monsterData;
 
     return (
       <MonsterEntries
         key={id}
         initialMonsterData={{ id, name, ac, hp, cr }}
-        initialIsEditing={false}
+        initialIsEditing={isEditing}
         onDeleteRow={() => deleteMonsterEntry(id)}
       />
     );
@@ -53,22 +45,10 @@ function MonsterList() {
 
   return (
     <>
+      <h1>DnD Encounter Planner</h1>
       <MonsterSearch />
-      <table id="main-table">
-        <thead>
-          <tr>
-            <th>Creature</th>
-            <th>Challenge</th>
-            <th>Armor Rating</th>
-            <th>Hit Points</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>{monsterEntries}</tbody>
-        <tfoot>
-          <MonsterAddEntry onClick={addMonsterEntry} />
-        </tfoot>
-      </table>
+      {monsterEntries}
+      <MonsterAddEntry onClick={addMonsterEntry} />
     </>
   );
 }

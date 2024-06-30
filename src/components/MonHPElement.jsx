@@ -3,6 +3,7 @@ import React from "react";
 function MonHPElement({ value, isEditing, onValueChange }) {
   return isEditing ? (
     <td>
+      HP:
       <input
         type="text"
         value={value}

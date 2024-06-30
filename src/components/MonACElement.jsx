@@ -3,6 +3,7 @@ import React from "react";
 function MonACElement({ value, isEditing, onValueChange }) {
   return isEditing ? (
     <td>
+      AC:
       <input
         type="text"
         value={value}

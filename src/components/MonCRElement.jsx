@@ -3,6 +3,7 @@ import React from "react";
 function MonCRElement({ value, isEditing, onValueChange }) {
   return isEditing ? (
     <td>
+      CR:
       <input
         type="text"
         value={value}

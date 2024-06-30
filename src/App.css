@@ -18,14 +18,19 @@ table {
   max-width: 640px;
   min-width: 640px;
   place-content: center;
-}
-
-#main-table {
   border: rgb(179, 0, 0), 1px, solid;
   border-collapse: collapse;
+  margin: 10px;
 }
 
 th {
   background-color: rgb(179, 0, 0);
   color: white;
+  text-align: center;
+}
+
+td {
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
 }
