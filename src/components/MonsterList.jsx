@@ -31,12 +31,41 @@ function MonsterList({ initialMonsterList }) {
   };
 
   const monsterEntries = initialMonsterData.map((monsterData) => {
-    const { id, name, ac, hp, cr, isEditing } = monsterData;
+    const {
+      id,
+      name,
+      ac,
+      hp,
+      cr,
+      str,
+      dex,
+      con,
+      int,
+      wis,
+      cha,
+      prof,
+      action,
+      isEditing,
+    } = monsterData;
 
     return (
       <MonsterEntries
         key={id}
-        initialMonsterData={{ id, name, ac, hp, cr }}
+        initialMonsterData={{
+          id,
+          name,
+          ac,
+          hp,
+          cr,
+          str,
+          dex,
+          con,
+          int,
+          wis,
+          cha,
+          prof,
+          action,
+        }}
         initialIsEditing={isEditing}
         onDeleteRow={() => deleteMonsterEntry(id)}
       />

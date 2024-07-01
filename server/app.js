@@ -13,9 +13,22 @@ app.use(express.json());
 ViteExpress.config({ printViteDevServerHost: true });
 
 const TEST_MONSTERS = [
-  { id: 0, name: "Goblin", cr: "1/4", ac: 15, hp: 7 },
-  { id: 1, name: "Goblin", cr: "1/4", ac: 15, hp: 7 },
-  { id: 2, name: "Goblin", cr: "1/4", ac: 15, hp: 7 },
+  {
+    id: 0,
+    name: "Goblin",
+    cr: "1/4",
+    ac: 15,
+    hp: 7,
+    str: 10,
+    dex: 10,
+    con: 10,
+    int: 10,
+    wis: 10,
+    cha: 10,
+    prof: "Skill: Stealth +6",
+    action:
+      "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage. Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+  },
 ];
 
 app.get("/api/monsters", (req, res) => {

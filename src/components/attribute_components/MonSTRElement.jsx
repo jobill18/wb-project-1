@@ -1,9 +1,9 @@
 import React from "react";
 
-function MonACElement({ value, isEditing, onValueChange }) {
+function MonSTRElement({ value, isEditing, onValueChange }) {
   return isEditing ? (
-    <td colSpan={2}>
-      AC:
+    <td>
+      STR:
       <input
         type="text"
         value={value}
@@ -11,8 +11,8 @@ function MonACElement({ value, isEditing, onValueChange }) {
       />
     </td>
   ) : (
-    <td colSpan={2}>AC: {value}</td>
+    <td>STR: {value}</td>
   );
 }
 
-export default MonACElement;
+export default MonSTRElement;

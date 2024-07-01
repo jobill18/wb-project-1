@@ -2,7 +2,7 @@ import React from "react";
 
 function MonHPElement({ value, isEditing, onValueChange }) {
   return isEditing ? (
-    <td>
+    <td colSpan={2}>
       HP:
       <input
         type="text"
@@ -11,7 +11,7 @@ function MonHPElement({ value, isEditing, onValueChange }) {
       />
     </td>
   ) : (
-    <td>HP: {value}</td>
+    <td colSpan={2}>HP: {value}</td>
   );
 }
 

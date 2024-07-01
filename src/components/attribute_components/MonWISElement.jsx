@@ -1,9 +1,9 @@
 import React from "react";
 
-function MonACElement({ value, isEditing, onValueChange }) {
+function MonWISElement({ value, isEditing, onValueChange }) {
   return isEditing ? (
-    <td colSpan={2}>
-      AC:
+    <td>
+      WIS:
       <input
         type="text"
         value={value}
@@ -11,8 +11,8 @@ function MonACElement({ value, isEditing, onValueChange }) {
       />
     </td>
   ) : (
-    <td colSpan={2}>AC: {value}</td>
+    <td>WIS: {value}</td>
   );
 }
 
-export default MonACElement;
+export default MonWISElement;

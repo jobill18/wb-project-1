@@ -7,12 +7,12 @@ function MonsterButtons({
   onRemoveClick,
 }) {
   return isEditing ? (
-    <th>
+    <th colSpan={2}>
       <button onClick={onSaveClick}>Done</button>
       <button onClick={onRemoveClick}>Remove</button>
     </th>
   ) : (
-    <th>
+    <th colSpan={2}>
       <button onClick={onEditClick}>Edit Creature</button>
     </th>
   );

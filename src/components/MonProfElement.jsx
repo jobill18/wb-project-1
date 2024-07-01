@@ -1,9 +1,9 @@
 import React from "react";
 
-function MonACElement({ value, isEditing, onValueChange }) {
+function MonProfElement({ value, isEditing, onValueChange }) {
   return isEditing ? (
     <td colSpan={2}>
-      AC:
+      Proficiencies:
       <input
         type="text"
         value={value}
@@ -11,8 +11,10 @@ function MonACElement({ value, isEditing, onValueChange }) {
       />
     </td>
   ) : (
-    <td colSpan={2}>AC: {value}</td>
+    <td colSpan={2}>
+      <strong>Proficiencies</strong>: {value}
+    </td>
   );
 }
 
-export default MonACElement;
+export default MonProfElement;

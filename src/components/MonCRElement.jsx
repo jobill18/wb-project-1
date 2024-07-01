@@ -2,7 +2,7 @@ import React from "react";
 
 function MonCRElement({ value, isEditing, onValueChange }) {
   return isEditing ? (
-    <td>
+    <td colSpan={2}>
       CR:
       <input
         type="text"
@@ -11,7 +11,7 @@ function MonCRElement({ value, isEditing, onValueChange }) {
       />
     </td>
   ) : (
-    <td>CR: {value}</td>
+    <td colSpan={2}>CR: {value}</td>
   );
 }
 

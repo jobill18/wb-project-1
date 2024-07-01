@@ -1,18 +1,20 @@
 import React from "react";
 
-function MonACElement({ value, isEditing, onValueChange }) {
+function MonActionElement({ value, isEditing, onValueChange }) {
   return isEditing ? (
-    <td colSpan={2}>
-      AC:
+    <>
+      Actions:
       <input
         type="text"
         value={value}
         onChange={(e) => onValueChange(e.target.value)}
       />
-    </td>
+    </>
   ) : (
-    <td colSpan={2}>AC: {value}</td>
+    <>
+      <strong>Actions</strong>: {value}
+    </>
   );
 }
 
-export default MonACElement;
+export default MonActionElement;
